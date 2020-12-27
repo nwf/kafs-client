@@ -1,4 +1,3 @@
-CFLAGS		= -g -O2 -Wall -Wsign-compare
 MKDIR		= mkdir
 INSTALL		= install
 DESTDIR		=
@@ -20,21 +19,6 @@ LNS		:= ln -sf
 VERSION		:= $(word 2,$(shell grep "^Version:" $(SPECFILE)))
 TARBALL		:= kafs-client-$(VERSION).tar
 ZTARBALL	:= $(TARBALL).bz2
-
-###############################################################################
-#
-# Guess at the appropriate word size
-#
-###############################################################################
-BUILDFOR	:= $(shell file /usr/bin/make | sed -e 's!.*ELF \(32\|64\)-bit.*!\1!')-bit
-
-ifeq ($(BUILDFOR),32-bit)
-CFLAGS		+= -m32
-else
-ifeq ($(BUILDFOR),64-bit)
-CFLAGS		+= -m64
-endif
-endif
 
 ###############################################################################
 #
