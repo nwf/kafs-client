@@ -1,0 +1,24 @@
+Source: kafs-client
+Maintainer: Nathaniel Filardo <nwfilardo@gmail.com>
+Section: net
+Priority: optional
+Standards-Version: 3.9.2
+Build-Depends: debhelper (>= 9), libkrb5-dev, libkeyutils-dev
+
+Package: kafs-client
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, keyutils (>= 1.6), kafs-client-libs
+Description: Userspace components for kAFS support
+  Includes aklog and AFSDB/SRV dns-resolver and CellServDB preloader support
+  programs for the in-kernel Andrew File System (AFS) cache manager.  Systemd
+  integration and documentation are also included.
+
+Package: kafs-client-libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Userspace components for kAFS support, runtime libraries
+
+Package: kafs-client-libs-dev
+Architecture: any
+Depends: kafs-client-libs
+Description: Userspace components for kAFS support, development files

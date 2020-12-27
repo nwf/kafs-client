@@ -1,0 +1,9 @@
+etc/kafs/client.conf
+etc/kafs/client.d/
+etc/request-key.d/kafs_dns.conf
+usr/bin/*
+usr/libexec/*
+usr/lib/systemd/*
+usr/sbin/*
+usr/share/kafs-client/*
+usr/share/man/*
